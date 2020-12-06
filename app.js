@@ -13,10 +13,6 @@ app.use(bodyParser.json())
 const PORT = process.env.PORT || 5000
 const DBurl = process.env.DBurl
 
-app.get('/', (req, res) => {
-    res.send({ message: "APIEndpoint up and running" }).status(200)
-})
-
 app.get('/heart_count', (req, res) => {
   MongoClient.connect(DBurl, async (err, client) => {
     if(err)
