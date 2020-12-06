@@ -1,0 +1,118 @@
+/* Big tablet to 1200px (widths smaller taht the 1140px row) */
+@media only screen and (max-width: 1200px) {
+    .hero-text-box {
+        width: 100%;
+        padding: 0 2%;
+    }
+    
+    .row { padding: 0 2%; }
+}
+
+
+/* Small tablet to big tablet: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+    body { font-size: 18px; }
+    section { padding: 60px 0; }
+    
+    .long-copy {
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    .icon-small { 
+        width: 17px;
+        margin-right: 5px;
+    }
+    
+    .city-feature { font-size: 90%; }
+    
+}
+
+
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+    
+    body { font-size: 16px; }
+    section { padding: 30px 0; }
+
+    
+    .logo { 
+        width: 15%;
+        height: auto;
+    }
+
+    .row,
+    .hero-text-box { 
+        padding: 0 4%; 
+    }
+    .col { 
+        width: 100%;
+        margin: 0 0 4% 0;
+    }
+    
+    .main-nav { display: none; }
+    
+    .mobile-nav-icon { 
+        display: inline-block;
+        font-size: 20px;
+        padding-right: 6px;
+    }
+
+    .mobile-nav-icon:focus {
+        outline: none;
+    }
+    
+    .main-nav {
+        float: left;
+        margin-top: 3px;
+        margin-left: 25px;
+    }
+    
+    .main-nav li {
+        display: block;
+        font-size: 12px;
+    }
+    
+    .main-nav li a:link,
+    .main-nav li a:visited {
+        display: block;
+        border: 0;
+        padding: 10px 0;
+        font-size: 130%;
+    }
+    
+    .sticky .main-nav { margin-top: 10px; }
+
+    .sticky .main-nav li a:link,
+    .sticky .main-nav li a:visited { padding: 10px 0; }
+    .sticky .mobile-nav-icon { margin-top: 10px; }
+    .sticky .mobile-nav-icon i { color: #555; }
+    
+    .nb-btn { 
+        padding: 5px 15px !important; 
+        font-size: 90%;
+    }
+    
+    h1 { font-size: 140%; }
+    h2 { font-size: 150%; }
+    
+    .long-copy {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .meals-showcase li {
+        width: 50%;
+    }
+    
+}
+
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+
+    section { padding: 25px 0; }
+
+    .nb-btn { margin-bottom: 5px; }
+}

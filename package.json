@@ -1,0 +1,29 @@
+{
+  "name": "polas-harbour-lounge",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon src/index.js",
+    "client": "npm start --prefix client",
+    "start": "node src/index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "mongodb": "^3.5.8",
+    "morgan": "^1.9.1"
+  },
+  "main": "app.js",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "author": "Lokesh",
+  "license": "ISC",
+  "description": ""
+}
