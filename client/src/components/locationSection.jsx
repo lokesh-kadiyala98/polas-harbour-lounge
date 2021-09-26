@@ -6,7 +6,7 @@ const locationSection = () => {
     return (
         <section className="section-location" id="location">
             <h2>We're currently only in Ballari</h2>
-            <div className="row js--wp-3 js--wp-2">
+            <div className="row">
                 <div className="col-xs-12 col-md-4 box">
                     <img src={s3BucketName + 'ballari.jpg'} alt="Ballari Fort" />
                 </div>

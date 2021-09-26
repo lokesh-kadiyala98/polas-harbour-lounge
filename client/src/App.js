@@ -19,7 +19,7 @@ import './vendors/css/normalize.css';
 import './vendors/css/animate.css';
 import './resources/css/style.css';
 import './resources/css/queries.css';
-import './resources/js/myScript';
+import './resources/js/animations';
 
 toast.configure()
 
