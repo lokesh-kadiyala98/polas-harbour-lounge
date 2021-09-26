@@ -474,6 +474,11 @@ footer {
     font-size: 80%;
 }
 
+.flex-end {
+    display: flex;
+    margin-left: auto;
+}
+
 footer p {
     text-align: center;
 }

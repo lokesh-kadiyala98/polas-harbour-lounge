@@ -65,8 +65,7 @@ class opinionForm extends Form {
                     {this.renderInput('number', 'Contact No', 'Enter Contact Number', 'number')}
                     {this.renderTextArea('experience','Tell us your experience')}
                     {this.renderLike('like' ,'Do you like our food?', this.state.data.like)}
-                    <br />
-                    <br />
+                    
                     {this.state.loading ?
                         this.renderLoadingButton('Sending...'):
                         this.renderButton('Send It!!')
