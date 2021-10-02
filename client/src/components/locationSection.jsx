@@ -8,7 +8,7 @@ const locationSection = () => {
             <h2>We're currently only in Ballari</h2>
             <div className="row">
                 <div className="col-xs-12 col-md-4 box">
-                    <img src={s3BucketName + 'ballari.jpg'} alt="Ballari Fort" />
+                    <img src={s3BucketName + '/ballari.jpg'} alt="Ballari Fort" />
                 </div>
                 <div className="col-xs-12 col-md-8 box">
                     <h3>Ballari</h3>

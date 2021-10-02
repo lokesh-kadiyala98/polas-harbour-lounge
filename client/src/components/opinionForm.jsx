@@ -42,12 +42,12 @@ class opinionForm extends Form {
 
             if(data.success) {
                 toast.success(data.success)
-                this.props.updateHeartCount()
                 this.setState(this.baseState)
             }
         } catch(ex) {
             toast.error("UH`OH! Something went wrong. It's on us not on you")
         }
+        this.props.updateHeartCount()
         this.setState({ loading: false })
     };
 
