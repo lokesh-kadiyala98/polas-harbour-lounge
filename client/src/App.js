@@ -37,16 +37,24 @@ class App extends Component {
   }
 
   async getHeartCount() {
-    const { data } = await axios( apiEndPoint + '/heart_count')
-
+    const { data } = await axios(apiEndPoint + '/heart_count')
+    
     this.setState({ heartCount: data.count })
   }
 
-  updateHeartCount() {
+  updateHeartCount = () => {
     this.getHeartCount()
   }
-    
+
   render() { 
+
+    const {
+      state: {
+        heartCount
+      },
+      updateHeartCount
+    } = this;
+
     return (  
       <React.Fragment>
         <header>
@@ -59,13 +67,13 @@ class App extends Component {
             </div>
           </div>
         </header>
-        <HeartCounter number={this.state.heartCount}/>
+        <HeartCounter heartCount={heartCount}/>
         <FeaturesSection />
         <Gallery />
         <LocationSection />
         <Testimonal />
         <CreatorsSection />
-        <OpinionForm updateHeartCount={() => this.updateHeartCount()} />
+        <OpinionForm updateHeartCount={updateHeartCount} />
         <FooterComponent />
       </React.Fragment>
     );

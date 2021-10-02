@@ -1,6 +1,6 @@
 import React from 'react';
 
-const heartCounter = ({ number }) => {
+const heartCounter = ({ heartCount }) => {
     return(
         <div className="container mt-5 js--section-heartCounter">
             <div className="jumbotron text-center">
@@ -10,10 +10,10 @@ const heartCounter = ({ number }) => {
                 <p>Our customers love to dine at Pola's and they'd return us a <i className="fas fa-heart"></i>. So, we kept a count on 'em.</p>
                 <hr />
                 
-                {number === -1 ?
+                {heartCount === -1 ?
                     '':
                     <p>
-                        <span className="counter mr-1"><b>{number}</b></span> hearts and counting.
+                        <span className="counter mr-1"><b>{heartCount}</b></span> hearts and counting.
                     </p>
                 }
 
