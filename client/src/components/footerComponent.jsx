@@ -17,7 +17,7 @@ const footerComponent = () => {
             </div>
             <div className="row">
                 <p className="col-xs-12">
-                    This webpage was handcrafted by CSE students, RYMEC &copy; 2019. All rights reserved.
+                    This webpage was handcrafted by Lokesh Kadiyala &copy; 2019. All rights reserved.
                 </p>
             </div>
         </footer>
