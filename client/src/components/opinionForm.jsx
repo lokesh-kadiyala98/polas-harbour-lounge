@@ -19,14 +19,23 @@ class opinionForm extends Form {
         data: { email: '', name: '', number: '', experience: '', like: false},
         loading: false,
         errors: { },
+        muteErrorsBeforeSubmit: true
     };
+
+    contactNumberValidator = (value, helpers) => {
+        if (value.length !== 10) {
+            return helpers.error('Enter valid input')
+        }
+
+        return value
+    }
     
     //schema is an object used by the Joi library to validate input 
     schema = {
         email: Joi.string().email({ minDomainAtoms: 2 }).required().label('Email'),
         name: Joi.string().required().label('Name'),
         experience: Joi.string().required().label('Experience'),
-        number: Joi.number().required().label('Contact No'),
+        number: Joi.string().length(10).required().label('Contact No'),
         like: Joi.boolean().allow(null, '')
     };
     
@@ -62,9 +71,9 @@ class opinionForm extends Form {
                 <form method="GET" className="mb-5" onSubmit={this.handleSubmit}>
                     {this.renderInput('name', 'Name', 'Enter Name')}
                     {this.renderInput('email', 'Email', 'Enter Email')}
-                    {this.renderInput('number', 'Contact No', 'Enter Contact Number', 'number')}
-                    {this.renderTextArea('experience','Tell us your experience')}
-                    {this.renderLike('like' ,'Do you like our food?', this.state.data.like)}
+                    {this.renderInput('number', 'Contact No', 'Enter Contact Number', 'number', 10)}
+                    {this.renderTextArea('experience', 'Tell us your experience')}
+                    {this.renderLike('like' , 'Do you like our food?', this.state.data.like)}
                     
                     {this.state.loading ?
                         this.renderLoadingButton('Sending...'):

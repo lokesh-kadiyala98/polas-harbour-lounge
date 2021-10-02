@@ -14,20 +14,22 @@ class Form extends Component {
     //Validates an individual property. Called when a change occurs in input fields.
     handleChange = e => {
 
-        const errors = {...this.state.errors};
-        
-        //currentTarget holds the field being changed
-        const errorMessages = this.validateProperty(e.currentTarget);
+        if (!this.state.muteErrorsBeforeSubmit) {
+            const errors = {...this.state.errors};
+            
+            //currentTarget holds the field being changed
+            const errorMessages = this.validateProperty(e.currentTarget);
 
-        //currentTarget.name is the name given to input field that is being changed
-        if(errorMessages) errors[e.currentTarget.name] = errorMessages;
-        else delete errors[e.currentTarget.name];
+            //currentTarget.name is the name given to input field that is being changed
+            if(errorMessages) errors[e.currentTarget.name] = errorMessages;
+            else delete errors[e.currentTarget.name];
+        }
 
         const data = {...this.state.data};
 
         data[e.currentTarget.name] = e.currentTarget.value;
         //for every key pressed in input field, call setState to update the state object.
-        this.setState({ data, errors });
+        this.setState({ data });
     };
     
     //called by handleChange method to validate individual fields
@@ -74,7 +76,7 @@ class Form extends Component {
         this.setState({ data });
     }
 
-    renderInput(name, label, placeholder, type='text', className='form-group') {
+    renderInput(name, label, placeholder, type='text', length=undefined, className='form-group') {
         const { data, errors } = this.state;
 
         return (
@@ -82,6 +84,7 @@ class Form extends Component {
                 type={type}
                 name={name}
                 value={data[name]}
+                length={length}
                 onChange={this.handleChange}
                 label={label}
                 className={className}
@@ -134,7 +137,7 @@ class Form extends Component {
 
     renderButton(label) {
         return (
-            <button disabled={this.validate()} type="submit" className="btn btn-outline-orange form-group flex-end">
+            <button type="submit" className="btn btn-outline-orange form-group flex-end">
                 {label}
             </button>
         );
@@ -142,7 +145,7 @@ class Form extends Component {
 
     renderLoadingButton(label) {
         return (
-            <button className="btn btn-outline-orange form-group float-right" type="button" disabled>
+            <button className="btn btn-outline-orange form-group flex-end" type="button" disabled>
                 <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 {label}
             </button>
